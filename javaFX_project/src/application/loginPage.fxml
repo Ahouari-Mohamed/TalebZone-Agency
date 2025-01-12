@@ -48,7 +48,7 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <Text fill="#ff811f" layoutX="68.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taleb Zone Classroom">
+            <Text fill="#ff811f" layoutX="85.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TalebZone Agency">
                <font>
                   <Font size="22.0" />
                </font>

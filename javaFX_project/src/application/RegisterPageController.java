@@ -27,7 +27,7 @@ public class RegisterPageController {
     private TextField  nom;
 
     @FXML
-    private ChoiceBox<String> role;
+    private TextField num_telephone;
 
     @FXML
     private PasswordField mot_passe;
@@ -65,31 +65,82 @@ public class RegisterPageController {
         
     @FXML
     void handleRegister(ActionEvent event) {
-    	// store data first
     	try {
-            Parent loginPage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(loginPage);
-            stage.setScene(scene);
-            stage.show();
+    		if (validateAllInputs() && validatePasswordMatch()) {
+    	    	// enregistrer les données premierement
+    			Parent loginPage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(loginPage);
+                stage.setScene(scene);
+                stage.show();
+                System.out.println("Account created successfully!");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
+    private boolean validateEmail() {
+        String emailVal = email.getText();
+        boolean isValid = emailVal.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+        updateFieldStyle(email, isValid);
+        return isValid;
+    }
 
-    @FXML
-    public void initialize() {
-        role.getItems().addAll("Étudiant", "Professeur");
+    private boolean validatePhone() {
+        String phoneVal = num_telephone.getText();
+        boolean isValid = phoneVal.matches("^0[0-9]{9}$");
+        updateFieldStyle(num_telephone, isValid);
+        return isValid;
+    }
 
-        // Set default value (optional)
-        role.setValue("Étudiant");
-        
-     // Add a listener to the selection change
-        role.setOnAction(this::handleRoleChange);
+    private boolean validateName() {
+        String nomVal = nom.getText();
+        boolean isValid = nomVal.length() >= 3 && nomVal.matches("^[a-zA-Z\\s]+$");
+        updateFieldStyle(nom, isValid);
+        return isValid;
     }
     
-    public void handleRoleChange(ActionEvent event) {
-    	System.out.println("Selected Role: " + role.getValue());
+    private boolean validateFamilyName() {
+        String prénomVal = prénom.getText();
+        boolean isValid = prénomVal.length() >= 3 && prénomVal.matches("^[a-zA-Z\\s]+$");
+        updateFieldStyle(prénom, isValid);
+        return isValid;
     }
+
+    private boolean validatePasscode() {
+        String mot_passeVal = mot_passe.getText();
+        boolean isValid = mot_passeVal.length() >= 6 && mot_passeVal.length() <= 20;
+        updateFieldStyle(mot_passe, isValid);
+        updateFieldStyle(visible_passe, isValid);
+        return isValid;
+    }
+
+    private boolean validateAllInputs() {
+        boolean isEmailValid = validateEmail();
+        boolean isPhoneValid = validatePhone();
+        boolean isNameValid = validateName();
+        boolean isFamilyNameValid = validateFamilyName();
+        boolean isPasscodeValid = validatePasscode();
+
+        return isEmailValid && isPhoneValid && isNameValid && isPasscodeValid && isFamilyNameValid;
+    }
+
+    private void updateFieldStyle(TextField field, boolean isValid) {
+        if (isValid) {
+            field.setStyle("-fx-background-color:  transparant; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");
+        } else {
+            field.setStyle("-fx-background-color:  transparant; -fx-border-color: red; -fx-border-width: 0px 0px 2px 0px;");
+        }
+    }
+    
+    private boolean validatePasswordMatch() {
+        String password = mot_passe.getText();
+        String repeatPassword = répeter_passe.getText();
+        boolean isMatch = password.equals(repeatPassword);
+        updateFieldStyle(répeter_passe, isMatch);
+        return isMatch;
+    }
+
 
 }

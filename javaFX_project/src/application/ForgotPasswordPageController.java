@@ -60,18 +60,59 @@ public class ForgotPasswordPageController {
     
     @FXML
     void handleForgotPassword(ActionEvent event) {
-    	// enregistrer les données premierement
     	try {
-            Parent loginPage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(loginPage);
-            stage.setScene(scene);
-            stage.show();
+    		if (validateAllInputs() && validatePasswordMatch()) {
+    	    	// enregistrer les données premierement
+    			Parent loginPage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(loginPage);
+                stage.setScene(scene);
+                stage.show();
+                System.out.println("Passe code modified successfully!");
+            }  
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    private boolean validateEmail() {
+        String emailVal = email.getText();
+        boolean isValid = emailVal.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+        updateFieldStyle(email, isValid);
+        return isValid;
+    }
+
+    private boolean validatePasscode() {
+        String mot_passeVal = mot_passe.getText();
+        boolean isValid = mot_passeVal.length() >= 6 && mot_passeVal.length() <= 20;
+        updateFieldStyle(mot_passe, isValid);
+        updateFieldStyle(visible_passe, isValid);
+        return isValid;
+    }
+
+    private boolean validateAllInputs() {
+        boolean isEmailValid = validateEmail();
+        boolean isPasscodeValid = validatePasscode();
+
+        return isEmailValid && isPasscodeValid;
+    }
+
+    private void updateFieldStyle(TextField field, boolean isValid) {
+        if (isValid) {
+            field.setStyle("-fx-background-color:  transparant; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");
+        } else {
+            field.setStyle("-fx-background-color:  transparant; -fx-border-color: red; -fx-border-width: 0px 0px 2px 0px;");
+        }
+    }
+    
+    private boolean validatePasswordMatch() {
+        String password = mot_passe.getText();
+        String repeatPassword = répeter_passe.getText();
+        boolean isMatch = password.equals(repeatPassword);
+        updateFieldStyle(répeter_passe, isMatch);
+        return isMatch;
+    }
+    
     @FXML
     void handleReturn(ActionEvent event) {
     	try {

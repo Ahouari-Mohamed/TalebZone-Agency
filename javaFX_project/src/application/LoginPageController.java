@@ -60,13 +60,48 @@ public class LoginPageController {
     @FXML
     public void handleLogin(ActionEvent event) {
         try {
-            Parent mainPage = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(mainPage);
-            stage.setScene(scene);
-            stage.show();
+        	if (validateAllInputs()) {
+	            Parent mainPage = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
+	            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	            Scene scene = new Scene(mainPage);
+	            stage.setScene(scene);
+	            stage.show();
+        	}
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    
+    private boolean validateEmail() {
+        String emailVal = email.getText();
+        boolean isValid = emailVal.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+        updateFieldStyle(email, isValid);
+        return isValid;
+    }
+    
+    private boolean validatePasscode() {
+        String mot_passeVal = mot_passe.getText();
+        
+        if (mot_passeVal == null || mot_passeVal.trim().isEmpty()) {
+        	updateFieldStyle(mot_passe, false);
+            updateFieldStyle(visible_passe, false);
+            return false;
+        }
+        return true;
+    }
+    
+    private boolean validateAllInputs() {
+        boolean isEmailValid = validateEmail();
+        boolean isPasscodeValid = validatePasscode();
+
+        return isEmailValid && isPasscodeValid;
+    }
+    
+    private void updateFieldStyle(TextField field, boolean isValid) {
+        if (isValid) {
+            field.setStyle("-fx-background-color:  transparant; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");
+        } else {
+            field.setStyle("-fx-background-color:  transparant; -fx-border-color: red; -fx-border-width: 0px 0px 2px 0px;");
         }
     }
 
