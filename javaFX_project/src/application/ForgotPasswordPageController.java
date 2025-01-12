@@ -64,6 +64,8 @@ public class ForgotPasswordPageController {
     		if (validateAllInputs() && validatePasswordMatch()) {
     	    	// enregistrer les données premierement
     			Parent loginPage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+
+                // Set window properties
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(loginPage);
                 stage.setScene(scene);
@@ -117,6 +119,8 @@ public class ForgotPasswordPageController {
     void handleReturn(ActionEvent event) {
     	try {
             Parent loginPage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+
+            // Set window properties
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(loginPage);
             stage.setScene(scene);

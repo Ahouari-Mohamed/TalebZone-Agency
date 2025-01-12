@@ -13,6 +13,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class LoginPageController {
@@ -109,6 +110,8 @@ public class LoginPageController {
     public void handleForgotPassword(ActionEvent event) {
         try {
             Parent forgotPasswordPage = FXMLLoader.load(getClass().getResource("forgotPasswordPage.fxml"));
+            
+            // Set window properties
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(forgotPasswordPage);
             stage.setScene(scene);
@@ -122,6 +125,8 @@ public class LoginPageController {
     public void handleRegister(ActionEvent event) {
         try {
             Parent registerPage = FXMLLoader.load(getClass().getResource("registerPage.fxml"));
+
+            // Set window properties
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(registerPage);
             stage.setScene(scene);
