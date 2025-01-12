@@ -1,2 +1,2 @@
-# TalebZone-Classroom-JavaFX
-TalebZone-Classroom-JavaFX is a desktop application developed using Java and JavaFX as part of our school project to practice the skills we learned in the JavaFX module. This project represents our efforts to apply the concepts taught in class and is designed to simulate a basic virtual classroom environment. While we are not professionals, this project showcases our understanding of Java programming and graphical user interfaces.
+# TalebZone-Agency
+TalebZone-Agency is a desktop application developed using Java and JavaFX as part of our school project to practice the skills we learned in the JavaFX module. This project represents our efforts to apply the concepts taught in class and is designed to simulate a basic agency management system. While we are not professionals, this project showcases our understanding of Java programming and graphical user interfaces.
