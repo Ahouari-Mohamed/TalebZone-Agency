@@ -13,16 +13,18 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-    	Pane root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+    	Pane root = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
 
     	// Set the icon for the stage
         Image icon = new Image(getClass().getResourceAsStream("Images/TZ_logo_min.png"));
         primaryStage.getIcons().add(icon);
 
         // Set window properties
-        primaryStage.setTitle("Login Page");
+        primaryStage.setTitle("TalebZone Agency");
         primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
+        primaryStage.setMaximized(true);
+        primaryStage.setResizable(true);
+        
         primaryStage.show();
     }
 

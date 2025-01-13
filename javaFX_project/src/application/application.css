@@ -1,1 +1,70 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.sidebar-btn {
+    -fx-background-color: #0000;
+    -fx-text-fill: #000000;
+    -fx-pref-height: 48px;
+    -fx-padding: 10 20;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #ffffff30;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: #ffffff30;
+}
+
+.sidebar-btn.active {
+    -fx-background-color: #ffffff80;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+}
+
+
+
+.scroll-pane {
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+.scroll-pane .viewport {
+    -fx-background-color: #fff;
+}
+
+
+.dashboard-card {
+    -fx-background-color: #B9DAFF;
+    -fx-background-radius: 8px;
+    -fx-min-width: 200px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 96px;
+    -fx-text-fill: black;
+}
+
+.dashboard-card.label {
+    -fx-text-fill: black;
+}
+
+.quickAct-btn {
+    -fx-background-color: #c9c9c9;
+    -fx-background-radius: 8px;
+    -fx-pref-height: 104px;
+}
+
+.orders-card {
+    -fx-background-color: #fff;
+    -fx-background-radius: 8px;
+    -fx-pref-width: 264px;
+    -fx-pref-height: 144px;
+    -fx-padding: 10px;
+}
+
+.orders-img {
+    -fx-border-radius: 4px;
+}
+
+.card-btn {
+    -fx-background-color: #c9c9c9;
+    -fx-padding: 10px;
+    -fx-background-radius: 8px;
+    -fx-pref-width: 264px;
+    -fx-pref-height: 56px;
+}
