@@ -13,6 +13,22 @@
     -fx-background-color: #ffffff30;
 }
 
+.reserver-btn {
+    -fx-background-color: #ff811f;
+    -fx-text-fill: white;
+    -fx-pref-height: 38px;
+    -fx-padding: 3 5;
+    -fx-font-size: 17px;
+    -fx-cursor: hand;
+    -fx-border-width: 2px;
+}
+
+.reserver-btn:hover {
+    -fx-background-color: white;
+    -fx-text-fill: #ff811f;
+    -fx-border-color: #ff811f;
+}
+
 .sidebar-btn.active {
     -fx-background-color: #ffffff80;
     -fx-text-fill: #000000;

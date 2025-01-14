@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="290.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.houseOfferTemplateController">
+   <children>
+      <ImageView fx:id="image" fitHeight="146.0" fitWidth="274.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+      <Separator layoutX="7.0" layoutY="160.0" prefHeight="0.0" prefWidth="173.0" style="-fx-background-color: #000000;" />
+      <Text fx:id="ville" layoutX="180.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agadir" textAlignment="CENTER" wrappingWidth="103.13671875">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="98.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/room.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="icon_masculin" fitHeight="23.0" fitWidth="23.0" layoutX="10.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/masculin.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="icon_femenine" fitHeight="23.0" fitWidth="23.0" layoutX="10.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@Images/femenine.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="nbrEtudiantsDésirer" layoutX="42.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="nbrChambres" layoutX="137.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="179.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disponible :" />
+      <Text fx:id="nbrPlacesDispo" fill="#ff811f" layoutX="257.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="prix" fill="#ff811f" layoutX="11.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1100" textAlignment="CENTER" wrappingWidth="80.13671875">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="86.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DH" textAlignment="CENTER" wrappingWidth="42.13671875">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_réserver" layoutX="156.0" layoutY="201.0" mnemonicParsing="false" onAction="#onReserve" prefHeight="27.0" prefWidth="126.0" styleClass="reserver-btn" text="Réserver" />
+      
+   </children>
+</AnchorPane>
