@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ReservationPopupController">
+   <children>
+      <TextField fx:id="cin" layoutX="63.0" layoutY="162.0" prefHeight="27.0" prefWidth="220.0" promptText="Carte d'identiter nationale" style="-fx-background-color: transparant; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Button fx:id="inscrire" layoutX="122.0" layoutY="399.0" mnemonicParsing="false" onAction="#onSubmit" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ff811f;" text="Réserver" textFill="#0598ff">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fill="#ff811f" layoutX="121.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Infos Client">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="prénom" layoutX="65.0" layoutY="210.0" prefHeight="27.0" prefWidth="100.0" promptText="Prénom" style="-fx-background-color: transparant; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="nom" layoutX="184.0" layoutY="211.0" prefHeight="27.0" prefWidth="100.0" promptText="Nom" style="-fx-background-color: transparant; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <ImageView fitHeight="42.0" fitWidth="49.0" layoutX="152.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/contract.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="adresse" layoutX="66.0" layoutY="300.0" prefHeight="27.0" prefWidth="220.0" promptText="Adresse" style="-fx-background-color: transparant; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="num_telephone" layoutX="65.0" layoutY="341.0" prefHeight="27.0" prefWidth="220.0" promptText="Numéro de télephone" style="-fx-background-color: transparant; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+      <ChoiceBox fx:id="gendre" layoutX="65.0" layoutY="258.0" prefHeight="25.0" prefWidth="220.0" style="-fx-background-color: transparant; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0598ff;" />
+   </children>
+</AnchorPane>
